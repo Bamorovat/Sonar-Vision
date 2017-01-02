@@ -9,23 +9,6 @@ Implementation of the Sonar-Vision algorithm described in:
 
 If you use Sonar_Vision in an academic work, please cite:
 
-@article{abadi2015mobile,title={Mobile robot navigation using sonar vision algorithm applied to omnidirectional vision},
-  /author={Abadi, Mohammad Hossein Bamorovat and Oskoei, Mohammadreza A and Fakharian, Ahmad},
-  //booktitle={AI \& Robotics (IRANOPEN), 2015},
-  ///pages={1--6},
-  ////year={2015},
-  /////organization={IEEE}
-//////}
-
-@article{abadi2015effects,
-  title={Effects of Mirrors in Mobile Robot Navigation Based on Omnidirectional Vision},
-  author={Abadi, Mohammad Hossein Bamorovat and Oskoei, Mohammadreza Asghari},
-  booktitle={8th International Conference on Intelligent Robotics and Applications, ICIRA 2015, Portsmouth, UK,.},
-  pages={37--48},
-  year={2015},
-  organization={Springer International Publishing}
-}
-
 The program takes video and find a free path.
 
 The parameters are: (see the paper for details)
