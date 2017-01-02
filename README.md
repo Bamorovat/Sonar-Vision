@@ -1,5 +1,6 @@
 # Sonar-Vision
-Author: [Mohammad Hossein Bamorovat Abadi](https://bamorovatwo.wordpress.com/).
+## Sonar Vision Algorithm Based on Omnidirectional Vision
+### Author: [Mohammad Hossein Bamorovat Abadi](https://bamorovatwo.wordpress.com/).
 
 This code implemented with C++ programing Language under C programing Language Standard and Open CV Library. 
 Implementation of the Sonar-Vision algorithm described in:
