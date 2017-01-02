@@ -9,7 +9,7 @@ Implementation of the Sonar-Vision algorithm described in:
 
 If you use Sonar_Vision in an academic work, please cite it via above bibtex links.
 
-The program takes video and find a free path.
+The program takes video and find and show a free path.
 
 The parameters are (see the paper for details): 
 1. Ns: Number of Sonars.
