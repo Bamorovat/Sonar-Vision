@@ -1,4 +1,5 @@
 # Sonar-Vision
+Author: [Mohammad Hossein Bamorovat Abadi!][https://bamorovatwo.wordpress.com/]
 This code implemented with C++ programing Language in C Standard.
 Implementation of the Sonar-Vision algorithm described in:
 
@@ -13,4 +14,4 @@ KK1: The number of first Sonar that we want to use.
 KK2: The number of last Sonar that we want to use.
 ii: Start point in each Sonar.
 
-Typical parameters are Ns=24, KK1=10, KK2=27, ii=60
+Typical parameters are Ns=24, KK1=10, KK2=27, ii=60.
