@@ -1,13 +1,13 @@
 # Sonar-Vision
 Author: [Mohammad Hossein Bamorovat Abadi](https://bamorovatwo.wordpress.com/).
 
-This code implemented with C++ programing Language in C Standard.
+This code implemented with C++ programing Language under C programing Language Standard and Open CV Library. 
 Implementation of the Sonar-Vision algorithm described in:
 
 1. Bamorovat Abadi,M.H, Asghari Oskoei,M. “Effects of Mirrors in Mobile Robot Navigation Based on Omnidirectional Vision.” 8th International Conference, ICIRA 2015, Portsmouth, UK, August 24-27, 2015.[[pdf]](https://bamorovatwo.files.wordpress.com/2016/12/intelligentroboticsandapplications.pdf)[[bibtex]](https://bamorovatwo.wordpress.com/bibtex1)
 2. Bamorovat Abadi,M.H., Asghari Oskoei,M. , Fakharian,A. “Mobile robot navigation using sonar vision algorithm applied to omnidirectional vision.” AI & Robotics (IRANOPEN), 2015,IEEE, {1-6}, 2015.[[pdf]](https://bamorovatwo.files.wordpress.com/2016/12/the-7th-robocup-iranopen-international-symposium-and-the-5th-joint-conference-of-ai-robotics.pdf)[[bibtex]](https://bamorovatwo.wordpress.com/bibtex2)
 
-If you use Sonar_Vision in an academic work, please cite:
+If you use Sonar_Vision in an academic work, please cite it via above bibtex links.
 
 The program takes video and find a free path.
 
