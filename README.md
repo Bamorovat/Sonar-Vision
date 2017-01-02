@@ -12,11 +12,13 @@ If you use Sonar_Vision in an academic work, please cite it via above bibtex lin
 The program takes video and find and show a free path.
 
 The parameters are (see the paper for details):
-...
-Ns: Number of Sonars
-KK1: The number of first Sonar that we want to use
-KK2: The number of last Sonar that we want to use
-ii: Start point in each Sonar
-...
+
+Ns: Number of Sonars.
+
+KK1: The number of first Sonar that we want to use.
+
+KK2: The number of last Sonar that we want to use.
+
+ii: Start point in each Sonar.
 
 Typical parameters are Ns=24, KK1=10, KK2=27, ii=60.
