@@ -11,8 +11,7 @@ Implementation of the **Sonar-Vision** algorithm described in:
 2. Bamorovat Abadi,M.H., Asghari Oskoei,M. , Fakharian,A. **“Mobile robot navigation using sonar vision algorithm applied to omnidirectional vision.”** AI & Robotics (IRANOPEN), 2015,IEEE, {1-6}, 2015.[[**PDF**]](https://bamorovat.files.wordpress.com/2017/01/the-7th-robocup-iranopen-international-symposium-and-the-5th-joint-conference-of-ai-robotics.pdf)[[**BibTex**]](https://bamorovat.wordpress.com/bibtex2)
 
 The program takes video and find static and dynamic obstacles, and free path. The parameters are (see the paper for details):
-
-Number of Sonars = 24. First Sonar number that we want to use = 10. last Sonar number that we want to use = 27. Start point in each Sonar = 60.
+**Number of Sonars = 24. First Sonar number that we want to use = 10. last Sonar number that we want to use = 27. Start point in each Sonar = 60**.
 
 
 #####If you use ***Visual_Sonar*** in an academic work, **please cite it via above bibtex links**.
