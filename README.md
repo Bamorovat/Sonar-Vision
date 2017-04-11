@@ -1,5 +1,5 @@
-# Sonar-Vision
-## Sonar Vision Algorithm Based on Omnidirectional Vision
+# Visual_Sonar
+## Visual Sonar Algorithm Based on Omnidirectional Vision
 ### Author: [Mohammad Hossein Bamorovat Abadi](https://bamorovat.wordpress.com/).
 
 
@@ -12,10 +12,10 @@ Implementation of the **Sonar-Vision** algorithm described in:
 
 The program takes video and find static and dynamic obstacles, and free path. The parameters are (see the paper for details):
 
-**Ns:** Number of Sonars. **KK1:** The number of first Sonar that we want to use. **KK2:** The number of last Sonar that we want to use. **ii:** Start point in each Sonar. Typical parameters are ***Ns=24, KK1=10, KK2=27, ii=60***.
+Number of Sonars = 24. First Sonar number that we want to use = 10. last Sonar number that we want to use = 27. Start point in each Sonar = 60.
 
 
-#####If you use ***Sonar_Vision*** in an academic work, **please cite it via above bibtex links**.
+#####If you use ***Visual_Sonar*** in an academic work, **please cite it via above bibtex links**.
 Describing more about our project is in: https://www.bamorovat.wordpress.com
 
 You can see a short movie of our Sonar Vision Implementation in: https://youtu.be/JKRwDcHyVbo
