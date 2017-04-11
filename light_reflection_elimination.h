@@ -23,15 +23,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using namespace cv;
 
-int light_reflection_elimination(Mat src, int Ax, int Ay) {
+int light_reflection_elimination(Mat Main_Image, int x_vector_point, int y_vector_point) {
 
-	Mat HSV;
-	cvtColor(src, HSV, CV_BGR2HSV);
-	Vec3b hsv = HSV.at<Vec3b>(Ax, Ay);
+	Mat HSV_Image;
+	cvtColor(Main_Image, HSV_Image, CV_BGR2HSV);
+	Vec3b hsv = HSV_Image.at<Vec3b>(x_vector_point, y_vector_point);
 	//int H=hsv.val[0]; //hue
-	int S = hsv.val[1]; //saturation
-	int V = hsv.val[2]; //value
-	int w;
-	w = V - S;
-	return (w);
+	int Saturation = hsv.val[1]; //saturation
+	int Value = hsv.val[2]; //value
+	int Free_Point;
+	Free_Point = Value - Saturation;
+	return (Free_Point);
 }

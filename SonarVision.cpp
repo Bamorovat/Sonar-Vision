@@ -40,19 +40,19 @@ int main(int, char**)
 	if (!cap.isOpened())  // check if we succeeded
 		return -1;
 
-	Mat src, grad2;
-	int SXX = 0, SYY = 0;
+	Mat Main_Image, Gradian_Image;
+	int X_Vector_Sum = 0, Y_Vector_Sum = 0;
 
 	for (;;)
 	{
-		Mat src;
-		cap >> src; // get a new frame from camera
+		//Mat Main_Image;
+		cap >> Main_Image; // get a new frame from camera
 
-		sobel(src, &grad2);     // Sobel Edge Detection & Threshold
-		sonar_vision(src, grad2, 24, 10, 27, 60, &SXX, &SYY);   //Sonar Vision Obstacle Avoidance function
-		cout << "Target Point in X dimension is = " << SXX << endl;
-		cout << "Target Point in Y dimension is = " << SYY << endl << endl;
-		SXX = 0, SYY = 0;
+		sobel(Main_Image, Gradian_Image);     // Sobel Edge Detection & Threshold
+		sonar_vision(Main_Image, Gradian_Image, 24, 10, 27, 60, X_Vector_Sum, Y_Vector_Sum);   //Sonar Vision Obstacle Avoidance function
+		cout << "Target Point in X dimension is = " << X_Vector_Sum << endl;
+		cout << "Target Point in Y dimension is = " << Y_Vector_Sum << endl << endl;
+		X_Vector_Sum = 0, Y_Vector_Sum = 0;
 
 		if (waitKey(30) >= 0) break;
 	}

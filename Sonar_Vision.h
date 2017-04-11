@@ -30,62 +30,62 @@ using namespace cv;
 #define pi 180
 #define pii 3.1415
 
-void sonar_vision(Mat src,Mat grad2, int Ns, int kk1, int kk2, int ii, int *SXX, int *SYY) {
+void sonar_vision(Mat Main_Image,Mat Gradian_Image, int Sonar_Number, int First_Sonar_Degree, int Last_Sonar_Degree, int First_pixel, int &X_Vector_Sum, int &Y_Vector_Sum) {
 
 	namedWindow("Main Image", 1);
 	namedWindow("Sonar_Vision", 1);
 
 	double alfa, degree;
-	int Vj[60][500];
-	int xx2, yy2, xx1, yy1;
-	int sxx, syy;
-	int x = src.rows;
-	int y = src.cols;
-	int Cx = x / 2, Cy = y / 2, Ax, Ay;
+	int Image_Matrix[60][500];
+	int x_vector_end, y_vector_end, x_vector_start, y_vector_start;
+	int x_Length, y_Length;
+	int x_rows = Main_Image.rows;
+	int y_rows = Main_Image.cols;
+	int Center_x = x_rows / 2, Center_y = y_rows / 2, x_vector, y_vector;
 
-	for (int k = kk1; k < kk2; k++) {
+	for (int k = First_Sonar_Degree; k < Last_Sonar_Degree; k++) {
 
-		degree = (2 * k*pi) / Ns;
+		degree = (2 * k*pi) / Sonar_Number;
 		alfa = degree*pii / 180;
 
-		for (int i = ii; i <= (Cx); i++) {
-			Ax = i*sin(alfa) + (Cx);
-			Ay = i*cos(alfa) + (Cy);
-			if (i == 60) {
-				xx1 = Ax;
-				yy1 = Ay;
+		for (int Pixel_Counter = First_pixel; Pixel_Counter <= (Center_x); Pixel_Counter++) {
+			x_vector = Pixel_Counter*sin(alfa) + (Center_x);
+			y_vector = Pixel_Counter*cos(alfa) + (Center_y);
+			if (Pixel_Counter == 60) {
+				x_vector_start = x_vector;
+				y_vector_start = y_vector;
 			}
-			if (i == Cx) {
-				xx2 = Ax;
-				yy2 = Ay;
+			if (Pixel_Counter == Center_x) {
+				x_vector_end = x_vector;
+				y_vector_end = y_vector;
 			}
-			uchar* data = grad2.ptr<uchar>(Ax, Ay);
-			Vj[k][i] = *data;
-			if (Vj[k][i] + Vj[k][i - 1] < 255)
+			uchar* data = Gradian_Image.ptr<uchar>(x_vector, y_vector);
+			Image_Matrix[k][Pixel_Counter] = *data;
+			if (Image_Matrix[k][Pixel_Counter] + Image_Matrix[k][Pixel_Counter - 1] < 255)
 				*data = 255;
-			else if (Vj[k][i] + Vj[k][i - 1]  > 255) {
-				int W = light_reflection_elimination(src, Ax, Ay);
+			else if (Image_Matrix[k][Pixel_Counter] + Image_Matrix[k][Pixel_Counter - 1]  > 255) {
+				int W = light_reflection_elimination(Main_Image, x_vector, y_vector);
 				if (W >= 170)
 					*data = 255;
 				else if (W < 170) {
-					i = Cx;
-					xx2 = Ax;
-					yy2 = Ay;
+					Pixel_Counter = Center_x;
+					x_vector_end = x_vector;
+					y_vector_end = y_vector;
 
 				}
 			}
 		}
-		sxx = xx2 - xx1;
-		syy = yy2 - yy1;
+		x_Length = x_vector_end - x_vector_start;
+		y_Length = y_vector_end - y_vector_start;
 
-		*SXX += sxx;
-		*SYY += syy;
+		X_Vector_Sum += x_Length;
+		Y_Vector_Sum += y_Length;
 	}
 
-	line(grad2, Point((Cy), (Cx)), Point(((*SYY) + Cy), ((*SXX) + Cx)), 255, 2, 0);
-	line(src, Point((Cy), (Cx)), Point(((*SYY) + Cy), ((*SXX) + Cx)), 255, 1, 0);
-	imshow("Main Image", src);
-	imshow("Sonar_Vision", grad2);
+	line(Gradian_Image, Point((Center_y), (Center_x)), Point(((Y_Vector_Sum) + Center_y), ((X_Vector_Sum) + Center_x)), 255, 2, 0);
+	line(Main_Image, Point((Center_y), (Center_x)), Point(((Y_Vector_Sum) + Center_y), ((X_Vector_Sum) + Center_x)), 255, 1, 0);
+	imshow("Main Image", Main_Image);
+	imshow("Sonar_Vision", Gradian_Image);
 	
 }
 
